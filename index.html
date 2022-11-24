@@ -7,13 +7,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
   <link rel="stylesheet" href="css/utilities.css">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/lightbox.min.css">
   <link rel="icon" href="img/img3.jpg">
   <link href="https:fonts.googleapis.com/css2?family=Objectivity:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
   <title>Welcome To FirstKlass</title>
 </head>
 <body id="home">
   <header class="hero">
-    <div class="navbar" id="navbar">
+    <div class="navbar top" id="navbar">
       <img src="img/logo.png" class="logo" alt="logo">
 
       <nav>
@@ -92,20 +93,22 @@
 
     <div class="row">
       <div class="column">
-        <img src="img/img2.jpg" alt="">
-        <img src="img/img5.jpg" alt="">
+        <a href="img/img2.jpg"data-lightbox="cases" data-title="House painting" ><img src="img/img2.jpg" alt=""></a>
+        <a href="img/img5.jpg"data-lightbox="cases" data-title="House painting" ><img src="img/img5.jpg" alt=""></a>
       </div>
       <div class="column">
-        <img src="img/img19.jpg" alt="">
-        <img src="img/img20.jpg" alt="">
+        <a href="img/img19.jpg"data-lightbox="cases" data-title="POP Installation" ><img src="img/img19.jpg" alt=""></a>
+        <a href="img/img20.jpg"data-lightbox="cases" data-title="POP Installation" ><img src="img/img20.jpg" alt=""></a>
       </div>
       <div class="column">
-        <img src="img/img16.jpg" alt="">
-        <img src="img/img14.jpg" alt="">
+        <a href="img/img16.jpg"data-lightbox="cases" data-title="House Transformation" ><img src="img/img16.jpg" alt=""></a>
+        <a href="img/img14.jpg"data-lightbox="cases" data-title="Firstklass Staff and C.E.O" ><img src="img/img14.jpg" alt=""></a>
+        
       </div>
       <div class="column">
-        <img src="img/img18.jpg" alt="">
-        <img src="img/img17.jpg" alt="">
+        <a href="img/img18.jpg"data-lightbox="cases" data-title="POP Installation" ><img src="img/img18.jpg" alt=""></a>
+        <a href="img/img17.jpg"data-lightbox="cases" data-title="Fully Coated and Beautified Building" ><img src="img/img17.jpg" alt=""></a>
+        
       </div>
     </div>
    </section>
@@ -200,5 +203,46 @@
     </div>
     <p>Copyright &copy; 2020 - FirstKlass</p>
   </footer>
+
+  <script
+    src="https://code.jquery.com/jquery-3.5.0.min.js" integrity = "sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous">
+  </script>
+  <script src="js/lightbox.min.js"></script> 
+  <script>
+    // const navbar = document.getElementById('navbar');
+    // let scrolled = false;
+
+    // window.onscroll = function(){
+    //   if(window.pageYOffset > 100){
+    //     navbar.classList.remove('top');        
+    //     if(!scrolled){
+    //       navbar.style.transform =  'translateY(-70px)';
+    //     }
+    //     setTimeout(function() {
+    //       navbar.style.transform =  'translateY(0)';
+    //       scrolled = true;
+    //     }, 200);
+
+    //   }else{
+    //     navbar.classList.add('top');
+    //     scrolled = false;
+    //   }
+    // }
+    
+    //smooth scrolling
+    $('#navbar a, .btn').on('click', function (e){
+      if(this.hash !== '');
+      e.preventDefault();
+
+      const hash = this.hash;
+      $('html, body').animate(
+        {
+          scrollTop: $(hash).offset().top - 100,
+        },
+        800
+      );
+
+    });
+  </script>
 </body>
 </html>
